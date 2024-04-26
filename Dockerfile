@@ -1,16 +1,18 @@
 # Dockerfile
 
 # base image
-FROM node:alpine
+FROM node:18-alpine3.18
 
 # create & set working directory
-RUN mkdir -p /usr/src
-WORKDIR /usr/src
+RUN mkdir -p /usr/blockmeta
+WORKDIR /usr/blockmeta
 
 # copy source files
-COPY . /usr/src
+COPY package.json /usr/blockmeta/
 
 # install dependencies
 RUN yarn install
 
-CMD yarn run start
+COPY src/ /user/blockmeta/src/
+
+CMD ["node", "src/index.js"]

@@ -13,6 +13,6 @@ COPY package.json /usr/blockmeta/
 # install dependencies
 RUN yarn install
 
-COPY src/ /user/blockmeta/src/
+COPY src/ /usr/blockmeta/src/
 
 CMD ["node", "src/index.js"]

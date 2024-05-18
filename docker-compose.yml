@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  blockmeta:
+    image: dappforce/statescan-blockmeta:latest
+    build:
+      dockerfile: Dockerfile
+    container_name: statescan-blockmeta
+    restart: always
+    network_mode: host
+    environment:
+      MONGO_URL: mongodb://127.0.0.1:27100
+      MONGO_DB_NAME: meta-subsocial
+      WS_ENDPOINT: wss://para.f3joule.space
+      SCAN_STEP: 300
+      SCAN_FROM_LATEST: 0
+      SAVE_VALIDATOR: "true"

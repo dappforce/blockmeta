@@ -2,6 +2,7 @@ node_modules
 .env
 log
 .DS_Store
+.idea
 
 *-image.sh
 *.deploy.sh
